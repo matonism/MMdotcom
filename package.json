@@ -1,0 +1,19 @@
+{
+  "name": "mmdotcom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matonism/MMdotcom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matonism/MMdotcom/issues"
+  },
+  "homepage": "https://github.com/matonism/MMdotcom#readme"
+}
