@@ -1,0 +1,28 @@
+.skill-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.skill-image {
+    width: 8rem;
+    height: 5rem;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    line-height: 1.4rem;
+}
+
+.skill-gauge {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.skill-bar {
+    background-color: #7bbbbb;
+    width: calc(100% / 5.5);
+    height: 2rem;
+}

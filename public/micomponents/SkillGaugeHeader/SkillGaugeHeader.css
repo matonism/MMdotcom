@@ -1,0 +1,18 @@
+
+
+.gauge-header{
+    width: 9rem;
+    font-size: 1.6rem;
+    font-family: Trampoline;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.gauge-header-row{
+	padding-left: 9rem; 
+	padding-right: 1rem; 
+	display: flex; 
+	justify-content: space-between;
+}

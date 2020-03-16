@@ -16,6 +16,16 @@
     src: url(/utilities/fonts/TheanoDidot-Regular.ttf) format("truetype");
 }
 
+@font-face {
+	font-family: "OpenSans";
+    src: url(/utilities/fonts/OpenSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "Montserrat";
+    src: url(/utilities/fonts/Montserrat-Regular.ttf) format("truetype");
+}
+
 body {
 	margin: 0px;
 }
@@ -23,7 +33,6 @@ body {
 .header-bar-container{
 	height: auto;
 	height: 100px;
-	border-bottom: 3px solid rgba(0,0,0,0.05);
 }
 
 .header-bar{
@@ -106,19 +115,39 @@ body {
 	font-family: "Trampoline";
 }
 .text-container {
-	font-size: 2rem;
+	font-size: 1.2rem;
+	line-height: 1.9rem;
 	padding: 2rem;
+	font-family: OpenSans;
 }
 
+.quote-text{
+	font-family: Theano;
+	font-size: 2rem;
+    line-height: 2.5rem;
+	padding: 0 2rem 0 2rem;
+	color: white;
+}
+
+.quote-name{
+	text-align: right; 
+	font-size: 1.3rem;
+}
+.text-title{
+	font-size: 4rem; 
+	color: #ffb0b0; 
+	font-family: Trampoline; 
+	line-height: 1;
+}
 .text-block{ 
     font-size: 3rem;
     color: #ffb0b0;
-    /* align-items: center; */
     display: flex;
     flex-flow: column;
     font-family: "Bodoni";
     text-align: center;
-    /* padding-right: 2rem;*/
+	opacity: 0;
+	transition: opacity 0.5s;
 }
 
 .image-oval{
@@ -127,7 +156,6 @@ body {
     align-self: center;
     height: 20rem;
     width: 15rem;
-    /* text-align: center; */
 	margin-bottom: 3rem;
 	background-image: url('/utilities/images/thumbnail.jpg');
 	background-size: 100% 100%;
@@ -168,3 +196,20 @@ body {
 	border-radius: 10px 10px 10px 10px;
 }
 
+
+.parallax-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+.padding-vertical {
+	padding: 5rem 0rem;
+}
+
+.skill-section-header {
+    font-family: Trampoline;
+    font-size: 2rem;
+    padding-top: 3rem;
+}

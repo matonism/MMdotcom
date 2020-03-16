@@ -25,10 +25,19 @@ class MiCoolComponent extends HTMLElement {
 	attributeChangedCallback(name, oldValue, newValue){
 		if(!!this.constructor.observedAttributes && !!this.baseMarkup){
 			this.setMergeFieldOnAllNodes(this.baseMarkup.childNodes, this.shadowRoot.childNodes, name, newValue);
+			
+			//TODO: Figure out a better solution to identify when all linked css files have had their style's applied
+			window.setTimeout(() => {
+				this.rerenderedCallback(name, oldValue, newValue);
+        	}, 10);
 		}
 	}
 
 	renderedCallback(){
+
+	}
+
+	rerenderedCallback(name, oldValue, newValue){
 
 	}
 

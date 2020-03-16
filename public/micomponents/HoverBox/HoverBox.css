@@ -1,0 +1,39 @@
+.box{
+    height: 10rem;
+    width: 10rem;
+    background-size: cover;
+    margin: 2rem;
+    position: relative;
+    font-size: 2.4rem;
+    transition: font-size 0.5s;
+    color: white;
+    font-family: Trampoline;
+    cursor: pointer;
+}
+
+.hover-box{
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+    position: absolute;
+}
+
+.hover-text{
+    margin: auto;
+    position: absolute;
+    top: calc(5rem - 1.2rem);
+    text-align: center;
+    width: 100%;
+
+}
+
+.hover-box:hover{
+    opacity: 0;
+}
+
+.box:hover{
+    font-size: 2.6rem;
+
+}
