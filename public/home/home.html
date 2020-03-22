@@ -5,31 +5,28 @@
 </header>
 
 <body>
-	<page-frame>
-		<div slot="content">
-			<div class="header-bar-container">
-				<div class="header-bar">
-					<hamburger-drop-down dropdown-width="1000px">
-						<div slot="dropdown-content">
-							<div class="hover-box-container" style="display: flex; justify-content: start; flex-wrap: wrap;">
-								<hover-box id="aboutMe" label="About Me" image="/utilities/images/thumbnail.jpg"></hover-box>
-								<hover-box id="projects" label="Projects" image="/utilities/images/field.png"></hover-box>
-								<hover-box id="work" label="Work" image="/utilities/images/highjump.jpg"></hover-box>
-								<hover-box id="contact" label="Contact" image="/utilities/images/background2.jpg"></hover-box>
-							</div>
-							<!-- <a >Item 1</a>
-							<a >Item 2</a>
-							<a >Item 3</a> -->
-						</div>
-					</hamburger-drop-down>
-					<!-- <div class="hamburger-icon vertical-center-container"><div class="header-item">&equiv;</div></div> -->
-					<!-- <div class="masthead vertical-center-container"><div class="header-item">Michael Matonis</div></div> -->
-					<div class="resume-link vertical-center-container"><div class="header-item contact-link-item">Contact</div></div>
+	
+	<div class="header-bar-container">
+		<div class="header-bar">
+			<hamburger-drop-down dropdown-width="100vw">
+				<div slot="dropdown-content">
+					<div class="hover-box-container" style="display: flex; justify-content: start; flex-wrap: wrap;">
+						<hover-box id="aboutMe" label="About Me" image="/utilities/images/thumbnail.jpg"></hover-box>
+						<hover-box id="projects" label="Projects" image="/utilities/images/field.png"></hover-box>
+						<hover-box id="work" label="Work" image="/utilities/images/highjump.jpg"></hover-box>
+						<hover-box id="contact" label="Contact" image="/utilities/images/background2.jpg"></hover-box>
+					</div>
 				</div>
-			</div>
+			</hamburger-drop-down>
+			<div class="resume-link vertical-center-container"><div class="header-item contact-link-item">Contact</div></div>
+		</div>
+	</div>
 
+
+	<parallax-frame height="50rem" background-image="/utilities/images/backgroundhighcontrast.jpg">
+		<div slot="content">
 			<div class="intro-container">
-				
+		
 				<div class="intro-body">
 					<div class="text-block">
 
@@ -41,126 +38,98 @@
 				</div>
 
 			</div>
-
-			<div style="height: 20rem; display: flex; flex-direction: column; justify-content: center;">
 			
-				<div class="text-container">
-					<div class="text-title">
-						About Me
-					</div>
-					Welcome to my personal website where I pretend to create something useful for my career as an excuse to experiment with design 
-					elements and a new web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
-					link for reference.  
+		</div>
+	</parallax-frame>
 
-					
-				</div>		
+
+	<div class="about-me-section">
+	
+		<div class="text-container">
+			<div class="text-title">
+				About Me?
+			</div>
+			<div class="padding-horizontal-m">
+				Welcome to my personal website where I attempt to create something useful for my career as an excuse to experiment with design 
+				elements and a new web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
+				link for reference.  
+			</div>
 			
-			</div>	
+		</div>		
+	
+	</div>	
 
-			<div>
-			
-				<div class="text-container">
-					<div class="text-title">
-						Experience
-					</div>
-					I have four years of professional experience in front and back-end development on an industry-leading, cloud-based CRM platform.  
-					Within this development lifecycle, I predominantly use standard front-end technologies like HTML, CSS, and Javascript along with platform-specific 
-					back-end technologies called Apex and SOQL (comparable to Java and SQL respectively).  I have interest and experience in a number of other 
-					areas, code-related and non-code-related as well
-
-					<div class="padding-vertical">
-						<skill-gauge-header></skill-gauge-header>
-						<skill-gauge label="JavaScript" level=5></skill-gauge>
-						<skill-gauge label="HTML" level=5></skill-gauge>
-						<skill-gauge label="CSS" level=4></skill-gauge>
-						<skill-gauge label="Java" level=3></skill-gauge>
-						<skill-gauge label="C#" level=5></skill-gauge>
-						<skill-gauge label="SQL" level=5></skill-gauge>
-						<skill-gauge label="PHP" level=2></skill-gauge>
-						<skill-gauge label="Python" level=2></skill-gauge>
-						<skill-gauge label="Swift" level=1></skill-gauge>
-
-						<div class="skill-section-header">Salesforce Development</div>
-						<skill-gauge label="Apex" level=5 color="#5b9ede"></skill-gauge>
-						<skill-gauge label="SOQL" level=4 color="#5b9ede"></skill-gauge>
-						<skill-gauge label="SFDX" level=5 color="#5b9ede"></skill-gauge>
-						<skill-gauge label="Lightning Web Components" level=5 color="#5b9ede"></skill-gauge>
-						<skill-gauge label="Aura Components" level=5 color="#5b9ede"></skill-gauge>
-
-						<div class="skill-section-header">Development Frameworks/Tools/Ideas</div>
-						<skill-gauge label="NodeJS" level=4 color="#e2a967"></skill-gauge>
-						<skill-gauge label="Private Key Encryption" level=4 color="#e2a967"></skill-gauge>
-						<skill-gauge label="REST API" level=4 color="#e2a967"></skill-gauge>
-						<skill-gauge label="Git" level=5 color="#e2a967"></skill-gauge>
-						<skill-gauge label="Android Studio" level=3 color="#e2a967"></skill-gauge>
-
-						<div class="skill-section-header">Assorted Others</div>
-						<skill-gauge label="Photoshop" level=5 color="#c36060"></skill-gauge>
-						<skill-gauge label="Cleveland Browns" level=5 color="#c36060"></skill-gauge>
-						<skill-gauge label="Party Planning" level=5 color="#c36060"></skill-gauge>
-						<skill-gauge label="Piano" level=1 color="#c36060"></skill-gauge>
-					</div>
-
-
-					
-				</div>		
-			
-			</div>	
-
-			<div style="height: 20rem; display: flex; flex-direction: column; justify-content: center;">
-			
-				<div class="text-container">
-					<div class="text-title">
-						Projects
-					</div>
-					Welcome to my personal website where I pretend to create something useful for my career as an excuse to experiment with design 
-					elements and a new web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
-					link for reference.  
-
-					
-				</div>		
-			
-			</div>	
-
-			<div style="height: 20rem; display: flex; flex-direction: column; justify-content: center;">
-			
-				<div class="text-container">
-					<div class="text-title">
-						Contact
-					</div>
-					Welcome to my personal website where I pretend to create something useful for my career as an excuse to experiment with design 
-					elements and a new web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
-					link for reference.  
-
-					
-				</div>		
-			
-			</div>	
-
-			<parallax-frame height="20rem" background-image="/utilities/images/field.png">
-				<div slot="content">
-					<div class="parallax-content">
-						<div class="quote-text">
-							"I was born a mere mortal and grew into the titan you have the pleasure of witnessing today.  
-							I'm also humble. 
-							I also like to write code sometimes. 
-							But mostly I really wanted to use parallax in my website"
-							<div class="quote-name"> - Michael Matonis - </div>
-						</div>
-					</div>
-				</div>
-			</parallax-frame>
-
-			<div class="text-container">			
-				<button onclick="openModal()">Open Modal</button>
-				I was born and raised in Northeast Ohio just south of Cleveland.  After graduating high school, I made the trip down to Columbus to attend THE Ohio State University to pursue a degree in Engineering Physics.  Through a number of intro to engineering courses, I soon found an interest in Computer Science and quickly changed my focus.  I graduated in June of 2016 with a Bachelors in Computer Science Engineering.  I now work as a Software Developer in Northeast Ohio.  I have a focus in custom Salesforce Development and a passion for web development as a whole. 
+	<div>
+		<div class="skill-section">
+			<div class="skill-category">
+				<div class="skill-section-header">Programming Languages</div>
+				<skill-gauge label="JavaScript" level=5></skill-gauge>
+				<skill-gauge label="HTML" level=5></skill-gauge>
+				<skill-gauge label="CSS" level=4></skill-gauge>
+				<skill-gauge label="Java" level=3></skill-gauge>
+				<skill-gauge label="C#" level=3></skill-gauge>
+				<skill-gauge label="SQL" level=3></skill-gauge>
+				<skill-gauge label="PHP" level=2></skill-gauge>
+				<skill-gauge label="Python" level=2></skill-gauge>
+				<skill-gauge label="Swift" level=1></skill-gauge>
 			</div>
 
+			<div class="skill-category">
+				<div class="skill-section-header">Salesforce Development</div>
+				<skill-gauge label="Apex" level=5 color="#5b9ede"></skill-gauge>
+				<skill-gauge label="SOQL" level=4 color="#5b9ede"></skill-gauge>
+				<skill-gauge label="SFDX" level=5 color="#5b9ede"></skill-gauge>
+				<skill-gauge label="Lightning Web Components" level=5 color="#5b9ede"></skill-gauge>
+				<skill-gauge label="Aura Components" level=5 color="#5b9ede"></skill-gauge>
+			</div>
+
+			<div class="skill-category">
+				<div class="skill-section-header">Development Frameworks/Tools/Ideas</div>
+				<skill-gauge label="NodeJS" level=4 color="#e2a967"></skill-gauge>
+				<skill-gauge label="Private Key Encryption" level=4 color="#e2a967"></skill-gauge>
+				<skill-gauge label="REST API" level=4 color="#e2a967"></skill-gauge>
+				<skill-gauge label="Git" level=5 color="#e2a967"></skill-gauge>
+				<skill-gauge label="Android Studio" level=3 color="#e2a967"></skill-gauge>
+			</div>
+
+			<div class="skill-category">
+				<div class="skill-section-header">Assorted Others</div>
+				<skill-gauge label="Photoshop" level=4 color="#c36060"></skill-gauge>
+				<skill-gauge label="Cleveland Browns" level=5 color="#c36060"></skill-gauge>
+				<skill-gauge label="Party Planning" level=4 color="#c36060"></skill-gauge>
+				<skill-gauge label="Piano" level=1 color="#c36060"></skill-gauge>
+			</div>
 		</div>
-	</page-frame>
+		
+	</div>		
 	
-	<micool-popup></micool-popup>
+
+	<div class="project-section">
 	
+		<div class="text-title">
+			Projects
+		</div>
+		<div class="project-container">
+			<hover-box id="MiCoolComponents" label="MiCool Components" size="15rem" image="/utilities/images/MiCoolComponent.png"></hover-box>
+			<hover-box id="UltimateSummerParty" label="Ultimate Summer Party" size="15rem" image="/utilities/images/USP.png"></hover-box>
+		</div>
+	
+	</div>	
+
+
+
+	
+	<div class="contact-container">
+	
+		<div class="text-title">
+			Contact
+		</div>
+		<div class="contact-line">Phone: (216) 406-8704</div>
+		<div class="contact-line">Email: michaelmatonis@hotmail.com</div>
+		<div class="contact-here-button">Contact Me Here</button>
+
+	</div>	
+		
 	<script type="module" src="../micomponents/micomponents.js"></script>
 	<script>
 		function openModal(){
@@ -172,6 +141,14 @@
 			setTimeout( () => {
 				document.querySelector('.text-block').style.opacity = 1;
 			}, 100 );
+		});
+
+		document.addEventListener('boxclick', (event) => {
+			if(event.detail.id === 'UltimateSummerParty'){
+				window.open('https://www.ultimatesummerparty.com', '_blank');
+			}else if(event.detail.id === 'MiCoolComponents'){
+				window.open('https://github.com/matonism/micomponent', '_blank');
+			}
 		});
 	</script>
 </body>

@@ -85,9 +85,7 @@ body {
 	flex-direction: column;
 	min-height: 400px;
 	flex-grow:1;
-	background-image: url('/utilities/images/backgroundhighcontrast.jpg');
-    background-size: 100% 100%;
-    height: 700px;
+	height: 100%;
 }
 
 
@@ -102,7 +100,6 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    /* margin-top: 4rem; */
     align-items: center;
 }
 .name-format{    
@@ -118,7 +115,7 @@ body {
 	font-size: 1.2rem;
 	line-height: 1.9rem;
 	padding: 2rem;
-	font-family: OpenSans;
+	font-family: Montserrat;
 }
 
 .quote-text{
@@ -134,10 +131,11 @@ body {
 	font-size: 1.3rem;
 }
 .text-title{
-	font-size: 4rem; 
+	font-size: 6rem; 
 	color: #ffb0b0; 
 	font-family: Trampoline; 
 	line-height: 1;
+	text-align: center;
 }
 .text-block{ 
     font-size: 3rem;
@@ -207,9 +205,77 @@ body {
 .padding-vertical {
 	padding: 5rem 0rem;
 }
+.padding-horizontal-m {
+	padding: 0rem 7rem;
+	text-align: center;
+}
 
 .skill-section-header {
     font-family: Trampoline;
     font-size: 2rem;
-    padding-top: 3rem;
+	padding-top: 3rem;
+	text-align: center;
+}
+
+
+
+.skill-category{
+	width: 50%;
+}
+
+.skill-section{
+	background-color: rgba(195,180,180,0.1);
+	padding: 3rem 5%;
+	display: flex; 
+	flex-wrap: wrap;
+	width: 90%;
+}
+
+.project-section{
+	padding: 10rem 5%;
+	width: 90%;
+}
+
+.project-container{
+	display: flex;
+	justify-content: center;
+}
+
+.contact-container{
+	flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 7rem 0;
+    width: 100%;
+    background-color: rgba(33,26,26,0.75);
+}
+
+.contact-here-button{
+	border: 2px solid white;
+	padding: 1rem;
+	transition: padding 0.1s, margin 0.1s;
+	color: white;
+	margin-top: 1.5rem;
+	cursor: pointer;
+	font-size: 1rem;
+	font-family: Montserrat;
+}
+
+.contact-here-button:hover{
+	padding: 1.2rem;
+	margin-top: 1.4rem;
+}
+
+.contact-line{
+    font-family: Montserrat;
+    color: white;
+	margin-bottom: 0.5rem;
+}
+
+.about-me-section{
+	height: 30rem; 
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center;
 }

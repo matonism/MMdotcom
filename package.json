@@ -2,9 +2,15 @@
   "name": "mmdotcom",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./server/index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
   "scripts": {
-    "test": "node ./server/server.js"
+    "test": "./server/index.js",
+    "start": "node ./server/index.js"
   },
   "repository": {
     "type": "git",

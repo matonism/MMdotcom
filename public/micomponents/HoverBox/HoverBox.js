@@ -8,8 +8,16 @@ class HoverBox extends MiCoolComponent {
 
     renderedCallback(){
         let box = this.shadowRoot.querySelector('.box');
+        let hoverText = this.shadowRoot.querySelector('.hover-text');
         box.style.backgroundImage = 'url(' + this.getAttribute('image') + ')';
 
+
+        if(!!this.getAttribute('size')){
+            box.style.height = this.getAttribute('size');
+            box.style.width = this.getAttribute('size');
+            hoverText.style.top = 'calc(' + this.getAttribute('size') + '/2 - ' + this.getAttribute('size') + '/4/2)';
+            //hoverText.style.fontSize = 'calc(' + this.getAttribute('size') + '/4)';
+        }
         if(!!this.getAttribute('height')){
             box.style.height = this.getAttribute('height');
         }

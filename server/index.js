@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-app.use(express.static(__dirname + '/../public'))
+app.use(express.static(__dirname + '/../public', {index: '/../public/home/home.html'}))
 .use(cors());
 console.log(__dirname + '/../public');
 // .use(cookieParser())
@@ -23,6 +23,6 @@ console.log(__dirname + '/../public');
 
 // serverController.handleRequests(app);
 
-var PORT = process.env.PORT || 5000;
-console.log('Listening on 5000....');
+var PORT = process.env.PORT || 3000;
+console.log('Listening on 3000....');
 app.listen(PORT);
