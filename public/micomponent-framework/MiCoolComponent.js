@@ -17,6 +17,7 @@ class MiCoolComponent extends HTMLElement {
 		let fileName = this.getComponentFileName();
 		var shadowRoot = this.attachShadow({mode: 'open'});
 		var wc = new WebComponentLoader(this, fileName + '/' + fileName);
+		console.log('connected ' + fileName);
 
 	}
 
