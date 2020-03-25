@@ -1,0 +1,43 @@
+
+
+.header-bar-container{
+	height: auto;
+	height: 100px;
+}
+
+.header-bar{
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: center;
+	font-size: 1.3rem;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.resume-link{
+	height: 100%;
+}
+
+.vertical-center-container{
+	display: flex;
+}
+
+.header-item{    
+	margin: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+	cursor: pointer;
+}
+
+.contact-link-item{
+	border: 1px solid black;
+	font-family: "Trampoline";
+}
+
+.hover-box-container{
+    display: flex; 
+    justify-content: start; 
+    flex-wrap: wrap;
+}

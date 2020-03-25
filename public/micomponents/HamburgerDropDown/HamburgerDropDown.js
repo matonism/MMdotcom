@@ -16,12 +16,19 @@ class HamburgerDropDown extends MiCoolComponent {
     }
 
     renderedCallback(){
+        this.clickingInDropdown = false;
+
         let hamburger = this.shadowRoot.querySelector('.hamburger-icon-container');
         let dropdownContent = this.shadowRoot.querySelector('.dropdown-content');
         dropdownContent.style.opacity = 0;
-        dropdownContent.style.width = this.getAttribute('dropdown-width');
+        if(this.getAttribute('dropdown-width') == 'body'){
+            dropdownContent.style.width = document.querySelector('body').offsetWidth;
+        }else{
+            dropdownContent.style.width = this.getAttribute('dropdown-width');
+        }
 
-        hamburger.addEventListener('click', () => {  
+        hamburger.addEventListener('click', (event) => {  
+            this.clickingInDropdown = true;
             if(this.getAttribute('display-class') == 'show'){
                 this.setAttribute('display-class', 'hide');
                 hamburger.classList.remove('selected');
@@ -32,8 +39,13 @@ class HamburgerDropDown extends MiCoolComponent {
             }
         });
 
+        dropdownContent.addEventListener('click', (event) => {  
+            this.clickingInDropdown = true;
+            this.setAttribute('display-class', 'show');
+        });
+
         window.addEventListener('click', (event) => {
-            if(!this.clickedInDropdown(event)){
+            if(!this.clickedInDropdown(event) && !this.clickingInDropdown){
                 this.setAttribute('display-class', 'hide');
                 hamburger.classList.remove('selected');
             }
@@ -47,16 +59,17 @@ class HamburgerDropDown extends MiCoolComponent {
     rerenderedCallback(name, oldValue, newValue){
 
         //waiting for rerendered css file
-            if(name==='display-class'){
-                let dropdownContent = this.shadowRoot.querySelector('.dropdown-content');
-                if(dropdownContent != null){
-                    if(newValue === 'show'){
-                        dropdownContent.style.opacity = 1;
-                    }else if(newValue === 'hide'){
-                        dropdownContent.style.opacity = 0;
-                    }
+        if(name==='display-class'){
+            let dropdownContent = this.shadowRoot.querySelector('.dropdown-content');
+            if(dropdownContent != null){
+                if(newValue === 'show'){
+                    dropdownContent.style.opacity = 1;
+                }else if(newValue === 'hide'){
+                    dropdownContent.style.opacity = 0;
                 }
             }
+        }
+        this.clickingInDropdown = false;
             
     }
 

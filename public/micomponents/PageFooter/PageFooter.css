@@ -1,0 +1,41 @@
+
+
+.contact-container{
+	flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 7rem 0;
+    width: 100%;
+    background-color: rgba(33,26,26,0.75);
+}
+
+.text-title{
+	font-size: 6rem; 
+	color: #ffb0b0; 
+	font-family: Trampoline; 
+	line-height: 1;
+	text-align: center;
+}
+
+.contact-here-button{
+	border: 2px solid white;
+	padding: 1rem;
+	transition: padding 0.1s, margin 0.1s;
+	color: white;
+	margin-top: 1.5rem;
+	cursor: pointer;
+	font-size: 1rem;
+	font-family: Montserrat;
+}
+
+.contact-here-button:hover{
+	padding: 1.2rem;
+	margin-top: 1.4rem;
+}
+
+.contact-line{
+    font-family: Montserrat;
+    color: white;
+	margin-bottom: 0.5rem;
+}

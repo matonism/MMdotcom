@@ -5,23 +5,8 @@
 </header>
 
 <body>
-	
-	<div class="header-bar-container">
-		<div class="header-bar">
-			<hamburger-drop-down dropdown-width="100vw">
-				<div slot="dropdown-content">
-					<div class="hover-box-container" style="display: flex; justify-content: start; flex-wrap: wrap;">
-						<hover-box id="aboutMe" label="About Me" image="/utilities/images/thumbnail.jpg"></hover-box>
-						<hover-box id="projects" label="Projects" image="/utilities/images/field.png"></hover-box>
-						<hover-box id="work" label="Work" image="/utilities/images/highjump.jpg"></hover-box>
-						<hover-box id="contact" label="Contact" image="/utilities/images/background2.jpg"></hover-box>
-					</div>
-				</div>
-			</hamburger-drop-down>
-			<div class="resume-link vertical-center-container"><div class="header-item contact-link-item">Contact</div></div>
-		</div>
-	</div>
 
+	<page-header></page-header>
 
 	<parallax-frame height="50rem" background-image="/utilities/images/backgroundhighcontrast.jpg">
 		<div slot="content">
@@ -47,7 +32,7 @@
 	
 		<div class="text-container">
 			<div class="text-title">
-				About Me?
+				About Me
 			</div>
 			<div class="padding-horizontal-m">
 				Welcome to my personal website where I attempt to create something useful for my career as an excuse to experiment with design 
@@ -110,25 +95,16 @@
 			Projects
 		</div>
 		<div class="project-container">
-			<hover-box id="MiCoolComponents" label="MiCool Components" size="15rem" image="/utilities/images/MiCoolComponent.png"></hover-box>
-			<hover-box id="UltimateSummerParty" label="Ultimate Summer Party" size="15rem" image="/utilities/images/USP.png"></hover-box>
+			<hover-box id="MiCoolComponents" label="MiCool Components" size="20rem" image="/utilities/images/MiCoolComponent.png"></hover-box>
+			<hover-box id="UltimateSummerParty" label="Ultimate Summer Party" size="20rem" image="/utilities/images/USP.png"></hover-box>
+			<hover-box id="customLookup" label="LWC custom lookup" size="20rem" font-color="midnightblue" image="/utilities/images/customLookup.png"></hover-box>
 		</div>
 	
 	</div>	
 
 
 
-	
-	<div class="contact-container">
-	
-		<div class="text-title">
-			Contact
-		</div>
-		<div class="contact-line">Phone: (216) 406-8704</div>
-		<div class="contact-line">Email: michaelmatonis@hotmail.com</div>
-		<div class="contact-here-button">Contact Me Here</button>
-
-	</div>	
+	<page-footer></page-footer>
 		
 	<script type="module" src="../micomponents/micomponents.js"></script>
 	<script>
@@ -148,6 +124,8 @@
 				window.open('https://www.ultimatesummerparty.com', '_blank');
 			}else if(event.detail.id === 'MiCoolComponents'){
 				window.open('https://github.com/matonism/micomponent', '_blank');
+			}else if(event.detail.id === 'customLookup'){
+				window.open('https://github.com/matonism/c-custom-lookup', '_blank');
 			}
 		});
 	</script>

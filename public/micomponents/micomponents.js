@@ -18,3 +18,15 @@ customElements.define('skill-gauge', SkillGauge);
 
 import SkillGaugeHeader from './SkillGaugeHeader/SkillGaugeHeader.js';
 customElements.define('skill-gauge-header', SkillGaugeHeader);
+
+import CustomInput from './CustomInput/CustomInput.js';
+customElements.define('custom-input', CustomInput);
+
+import ContactForm from './ContactForm/ContactForm.js';
+customElements.define('contact-form', ContactForm);
+
+import PageHeader from './PageHeader/PageHeader.js';
+customElements.define('page-header', PageHeader);
+
+import PageFooter from './PageFooter/PageFooter.js';
+customElements.define('page-footer', PageFooter);

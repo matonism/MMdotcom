@@ -15,15 +15,26 @@ class HoverBox extends MiCoolComponent {
         if(!!this.getAttribute('size')){
             box.style.height = this.getAttribute('size');
             box.style.width = this.getAttribute('size');
-            hoverText.style.top = 'calc(' + this.getAttribute('size') + '/2 - ' + this.getAttribute('size') + '/4/2)';
-            //hoverText.style.fontSize = 'calc(' + this.getAttribute('size') + '/4)';
+            hoverText.style.top = 'calc(' + this.getAttribute('size') + '/2 - ' + this.getAttribute('size') + '/2.5/2)';
+            box.style.fontSize = 'calc(' + this.getAttribute('size') + '/5)';
+            box.addEventListener('mouseenter', ()=>{
+                box.style.fontSize = 'calc(' + this.getAttribute('size') + '/4.5)';
+
+            });
+            box.addEventListener('mouseleave', ()=>{
+                box.style.fontSize = 'calc(' + this.getAttribute('size') + '/5)';
+            });
         }
+        
         if(!!this.getAttribute('height')){
             box.style.height = this.getAttribute('height');
         }
 
         if(!!this.getAttribute('width')){
             box.style.width = this.getAttribute('width');
+        }
+        if(!!this.getAttribute('font-color')){
+            box.style.color = this.getAttribute('font-color');
         }
 
         box.addEventListener('click', (event) => {
