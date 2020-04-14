@@ -1,0 +1,134 @@
+<html>
+
+<header>
+	<link rel="stylesheet" href="/utilities/css/mmdotcom.css">
+	<script type="module" src="/micomponents/micomponents.js"></script>
+</header>
+
+<body id="home">
+
+	<page-header></page-header>
+
+	<parallax-frame height="50rem" background-image="/utilities/images/backgroundhighcontrast.jpg">
+		<div slot="content">
+			<div class="intro-container">
+		
+				<div class="intro-body">
+					<div class="text-block">
+
+						<div class="name-format">
+							Michael Matonis
+						</div>
+						Software Developer
+					</div> 
+				</div>
+
+			</div>
+			
+		</div>
+	</parallax-frame>
+
+
+	<div id="about-me-section" class="about-me-section">
+	
+		<div class="text-container">
+			<div class="text-title">
+				About Me
+			</div>
+			<div class="padding-horizontal-m">
+				Welcome to my personal website where I attempt to create something useful for my career as an excuse to experiment with design 
+				elements and a new web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
+				link for reference.  
+			</div>
+			
+		</div>		
+	
+	</div>	
+
+	<div id="skill-section" class="skill-section">
+		<div class="skill-category">
+			<div class="skill-section-header">Programming Languages</div>
+			<skill-gauge label="JavaScript" level=5></skill-gauge>
+			<skill-gauge label="HTML" level=5></skill-gauge>
+			<skill-gauge label="CSS" level=4></skill-gauge>
+			<skill-gauge label="Java" level=3></skill-gauge>
+			<skill-gauge label="C#" level=3></skill-gauge>
+			<skill-gauge label="SQL" level=3></skill-gauge>
+			<skill-gauge label="PHP" level=2></skill-gauge>
+			<skill-gauge label="Python" level=2></skill-gauge>
+			<skill-gauge label="Swift" level=1></skill-gauge>
+		</div>
+
+		<div class="skill-category">
+			<div class="skill-section-header">Salesforce Development</div>
+			<skill-gauge label="Apex" level=5 color="#5b9ede"></skill-gauge>
+			<skill-gauge label="SOQL" level=4 color="#5b9ede"></skill-gauge>
+			<skill-gauge label="SFDX" level=5 color="#5b9ede"></skill-gauge>
+			<skill-gauge label="Lightning Web Components" level=5 color="#5b9ede"></skill-gauge>
+			<skill-gauge label="Aura Components" level=5 color="#5b9ede"></skill-gauge>
+		</div>
+
+		<div class="skill-category">
+			<div class="skill-section-header">Development Frameworks/Tools/Ideas</div>
+			<skill-gauge label="NodeJS" level=4 color="#e2a967"></skill-gauge>
+			<skill-gauge label="Private Key Encryption" level=4 color="#e2a967"></skill-gauge>
+			<skill-gauge label="REST API" level=4 color="#e2a967"></skill-gauge>
+			<skill-gauge label="Git" level=5 color="#e2a967"></skill-gauge>
+			<skill-gauge label="Android Studio" level=3 color="#e2a967"></skill-gauge>
+		</div>
+
+		<div class="skill-category">
+			<div class="skill-section-header">Assorted Others</div>
+			<skill-gauge label="Photoshop" level=4 color="#c36060"></skill-gauge>
+			<skill-gauge label="Cleveland Browns" level=5 color="#c36060"></skill-gauge>
+			<skill-gauge label="Party Planning" level=4 color="#c36060"></skill-gauge>
+			<skill-gauge label="Piano" level=1 color="#c36060"></skill-gauge>
+		</div>
+	</div>
+		
+	
+
+	<div id="project-section" class="project-section">
+	
+		<div class="text-title">
+			Projects
+		</div>
+		<div class="project-container">
+			<hover-box id="MiCoolComponents" label="MiCool Components" size="20rem" image="/utilities/images/MiCoolComponent.png"></hover-box>
+			<hover-box id="UltimateSummerParty" label="Ultimate Summer Party" size="20rem" image="/utilities/images/USP.png"></hover-box>
+			<hover-box id="customLookup" label="LWC custom lookup" size="20rem" font-color="midnightblue" image="/utilities/images/customLookup.png"></hover-box>
+		</div>
+	
+	</div>	
+
+
+
+	<page-footer></page-footer>
+		
+	<script>
+		function openModal(){
+			document.querySelector('micool-popup').showPopup();
+		}
+
+		window.addEventListener('load', () => {
+			//adding delay because CSS hasn't been loaded yet
+			setTimeout( () => {
+				document.querySelector('.text-block').style.opacity = 1;
+				//window.scrollTo(0, 0);
+			}, 100 );
+		
+		});
+
+		document.addEventListener('boxclick', (event) => {
+			if(event.detail.id === 'UltimateSummerParty'){
+				window.open('https://www.ultimatesummerparty.com', '_blank');
+			}else if(event.detail.id === 'MiCoolComponents'){
+				window.open('https://github.com/matonism/micomponent', '_blank');
+			}else if(event.detail.id === 'customLookup'){
+				window.open('https://github.com/matonism/c-custom-lookup', '_blank');
+			}
+		});
+	</script>
+</body>
+
+</html>

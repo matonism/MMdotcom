@@ -1,3 +1,5 @@
+import ComponentMarkupMap from './ComponentMarkupMap.js';
+
 function WebComponentLoader(component, directoryName, loadComponentsAtInit){
 
 	this.baseMarkup;
@@ -29,12 +31,45 @@ function WebComponentLoader(component, directoryName, loadComponentsAtInit){
 
 	this.importHTMLTemplate = function(directoryName){
 
-		return fetch("/micomponents/" + directoryName + ".html").then(response => response.text()).then(text => {
-			let markup = this.createElementsFromHTML(text);
-			this.component.rootNode.appendChild(markup.content.cloneNode(true));
-			this.setMergeFieldsOnInit();
-			return text;
-		});
+		if(ComponentMarkupMap.hasResource(directoryName + '-html')){
+			//leverage template that will already be loaded from the first call for each component
+			return new Promise((resolve, reject) => {
+				let iteration = 0;
+				let interval = setInterval(() => {
+					
+					let resourceEntry = ComponentMarkupMap.getResource(directoryName + '-html');
+
+					if(iteration++ == 100){
+						clearInterval(interval);
+						console.log('The interval ran too many times. Something went wrong loading micomponents');
+						reject('The interval ran too many times. Something went wrong loading micomponents');
+					}
+
+					if(resourceEntry.status == 'loaded'){  
+						clearInterval(interval);
+						this.setComponentMarkup(resourceEntry.resource);
+						resolve(resourceEntry.resource);
+					}
+				}, 10);
+			});
+
+		}else{
+			//load the template file for the first call to each given component
+			ComponentMarkupMap.prototype.resources = {};
+			ComponentMarkupMap.createResourceEntry(directoryName + '-html');
+			return fetch("/micomponents/" + directoryName + ".html").then(response => response.text()).then(text => {
+				ComponentMarkupMap.loadResource(directoryName + '-html', text);
+				this.setComponentMarkup(text);
+				return text;
+			});
+
+		}
+	}
+
+	this.setComponentMarkup = function(text){
+		let markup = this.createElementsFromHTML(text);
+		this.component.rootNode.appendChild(markup.content.cloneNode(true));
+		this.setMergeFieldsOnInit();
 	}
 
 	this.createElementsFromHTML = function(htmlString) {

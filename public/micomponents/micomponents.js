@@ -1,5 +1,3 @@
-
-
 import PageHeader from './PageHeader/PageHeader.js';
 customElements.define('page-header', PageHeader);
 

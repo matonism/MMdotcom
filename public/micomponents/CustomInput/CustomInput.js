@@ -7,7 +7,7 @@ import MiCoolComponent from "../../micomponent-framework/MiCoolComponent.js";
 class CustomInput extends MiCoolComponent {
 
     static get observedAttributes(){
-        return ['label', 'name', 'file-input-label'];
+        return ['label', 'name', 'file-input-label', 'variant'];
     }
     
     constructor(){

@@ -209,5 +209,18 @@ body {
 }
 
 .contact-form-container{
-	background-color: rgba(195, 181, 181, 0.2);
+	background-color: rgba(195,180,180,0.1);
+}
+
+.contact-header{
+	background-image: url(/utilities/images/fieldbw.png); 
+	background-size: cover; 
+	height: 10rem; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	font-size: 6rem; 
+	color: white; 
+	font-family: Trampoline; 
+	padding-top: 1rem;
 }

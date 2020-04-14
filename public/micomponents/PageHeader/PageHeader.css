@@ -33,7 +33,13 @@
 
 .contact-link-item{
 	border: 1px solid black;
-	font-family: "Trampoline";
+    font-family: "Trampoline";
+    transition: 0.1s padding, 0.1s margin-right;
+}
+
+.contact-link-item:hover{
+    padding: 1.1rem;
+    margin-right: 1.9rem;
 }
 
 .hover-box-container{

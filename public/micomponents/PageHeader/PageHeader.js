@@ -4,30 +4,28 @@ class PageHeader extends MiCoolComponent {
 
     renderedCallback(){
 
+        let contactLink = this.shadowRoot.querySelector('.contact-link-item');
+        this.addNavigationClick(contactLink, '/pages/contact');
+
         let homeBox = this.shadowRoot.querySelector('#home');
-        homeBox.addEventListener('click', () => {
-            window.location = '/pages/home';
-        })
+        this.addNavigationClick(homeBox, '/pages/home');
 
         let skillBox = this.shadowRoot.querySelector('#skills');
-        skillBox.addEventListener('click', () => {
-            location.hash = '';
-            window.location.pathname = '/pages/home#skill-section';
-        })
+        this.addNavigationClick(skillBox, '/pages/home#skill-section');
 
         let projectsBox = this.shadowRoot.querySelector('#projects');
-        projectsBox.addEventListener('click', () => {
-            location.hash = '';
-            window.location.pathname = '/pages/home#project-section';
-        })
-        
+        this.addNavigationClick(projectsBox, '/pages/home#project-section');
         
         let contactBox = this.shadowRoot.querySelector('#contact');
-        contactBox.addEventListener('click', () => {
-            location.hash = '';
-            window.location = '/pages/contact';
-        });
+        this.addNavigationClick(contactBox, '/pages/contact');
 
+    }
+
+    addNavigationClick(element, url){
+        element.addEventListener('click', () => {
+            location.hash = '';
+            window.location = url;
+        });
     }
 }
 

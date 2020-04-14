@@ -1,8 +1,8 @@
 <html>
 
 <header>
-	<link rel="stylesheet" href="/utilities/css/mmdotcom.css">
 	<script type="module" src="/micomponents/micomponents.js"></script>
+	<link rel="stylesheet" href="/utilities/css/mmdotcom.css">
 </header>
 
 <body id="home">
@@ -106,6 +106,7 @@
 	<page-footer></page-footer>
 		
 	<script>
+		console.log('page is starting');
 		function openModal(){
 			document.querySelector('micool-popup').showPopup();
 		}
@@ -115,11 +116,14 @@
 			setTimeout( () => {
 				document.querySelector('.text-block').style.opacity = 1;
 				//window.scrollTo(0, 0);
+				
+				console.log('making text-block visible');
 			}, 100 );
 			
 		});
 
 		document.addEventListener('boxclick', (event) => {
+			console.log('on click boxes');
 			if(event.detail.id === 'UltimateSummerParty'){
 				window.open('https://www.ultimatesummerparty.com', '_blank');
 			}else if(event.detail.id === 'MiCoolComponents'){
