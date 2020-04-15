@@ -7,7 +7,7 @@ import MiCoolComponent from "../../micomponent-framework/MiCoolComponent.js";
 class CustomInput extends MiCoolComponent {
 
     static get observedAttributes(){
-        return ['label', 'name', 'file-input-label', 'variant'];
+        return ['label', 'name', 'file-input-label', 'variant', 'error'];
     }
     
     constructor(){
@@ -20,6 +20,19 @@ class CustomInput extends MiCoolComponent {
 
     renderedCallback(){
         this.setUpInputFormat();
+    }
+    
+    rerenderedCallback(){
+        var inputField = this.shadowRoot.querySelector('#input-field');
+        let textarea = this.shadowRoot.querySelector('textarea');
+
+        if(this.getAttribute('error')){
+            inputField.classList.add('error');
+            textarea.classList.add('error');
+        }else{
+            inputField.classList.remove('error');
+            textarea.classList.remove('error');
+        }
     }
 
     setUpInputFormat(){
@@ -72,6 +85,10 @@ class CustomInput extends MiCoolComponent {
         }
         if(!!this.getAttribute('value')){
             inputField.value = this.getAttribute('value');
+        }
+
+        if(this.getAttribute('error')){
+            inputField.classList.add('error');
         }
 
     }

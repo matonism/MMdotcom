@@ -4,7 +4,7 @@ class ComponentMarkupMap {
 
     static hasResource(key){
         let hasResource = false;
-        Object.keys(ComponentMarkupMap.prototype.resources).find(keyCheck => {
+        Object.keys(ComponentMarkupMap.resources).find(keyCheck => {
             if(keyCheck == key){
                 hasResource = true;
             }
@@ -14,7 +14,7 @@ class ComponentMarkupMap {
     }
 
     static getResource(key){
-        return ComponentMarkupMap.prototype.resources[key];
+        return ComponentMarkupMap.resources[key];
     }
 
 
@@ -25,7 +25,7 @@ class ComponentMarkupMap {
             components: [],
             resourceType: resourceType
         }
-        ComponentMarkupMap.prototype.resources[key] = resourceEntry;
+        ComponentMarkupMap.resources[key] = resourceEntry;
     }
 
     static loadResource(key, resource){
@@ -40,5 +40,5 @@ class ComponentMarkupMap {
     }
 
 }
-ComponentMarkupMap.prototype.resources = {};
+ComponentMarkupMap.resources = {};
 export default ComponentMarkupMap;

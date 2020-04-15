@@ -108,3 +108,7 @@ textarea.minimal-light {
 textarea.minimal:focus {
     outline:none;
 }
+
+.error{
+    border: 1px solid red;
+}

@@ -1,6 +1,7 @@
 var express = require('express'); // Express web server framework
 // var request = require('request'); 
 var cors = require('cors');
+var fs = require('fs');
 // const path = require('path')
 
 // var querystring = require('querystring');
@@ -25,23 +26,35 @@ function handleRedirect(req, res) {
     console.log(req.originalUrl);
     let requestUrl = req.originalUrl.replace('%23', '#');
     let relativeLinkSplit = requestUrl.split('#');
-
-    let splitURL = relativeLinkSplit[0].split('/pages/');
-    if(splitURL.length > 1){
-        if(!splitURL[1].includes('.html')){
-            let targetUrl = req.originalUrl + splitURL[1].split('/')[0] + '.html';
-            if(relativeLinkSplit.length > 1){
-                console.log('redirecting to...');
-                targetUrl = splitURL[0] + '/pages/' + splitURL[1] + '/' +  splitURL[1].split('/')[0] + '.html#' + relativeLinkSplit[1];
-                console.log(targetUrl);
-                res.redirect(targetUrl);
-            }else{
-                console.log(targetUrl);
-                res.sendFile(targetUrl, { root: __dirname + '/../public/' });
-            }
+    var isFile = true; 
+    fs.stat(__dirname + '/../public' + requestUrl, function(err, stats) {
+        if (stats.isDirectory()) {
+            isFile = false;
         }
-
-    }
+        
+        let splitURL = relativeLinkSplit[0].split('/pages/');
+        if(splitURL.length > 1){
+            if(!isFile){
+                console.log('Request is for directory...');
+                let targetUrl = req.originalUrl + '/index.html';
+                res.sendFile(targetUrl, { root: __dirname + '/../public/' });
+    
+            }else if(!splitURL[1].includes('.html')){
+                let targetUrl = req.originalUrl + splitURL[1].split('/')[0] + '.html';
+                if(relativeLinkSplit.length > 1){
+                    console.log('redirecting to...');
+                    targetUrl = splitURL[0] + '/pages/' + splitURL[1] + '/' +  splitURL[1].split('/')[0] + '.html#' + relativeLinkSplit[1];
+                    console.log(targetUrl);
+                    res.redirect(targetUrl);
+                }else{
+                    console.log(targetUrl);
+                    res.sendFile(targetUrl, { root: __dirname + '/../public/' });
+                }
+            }
+    
+        }
+    });
+    
 }
 // .use(cookieParser())
 // .use(fileUpload({
