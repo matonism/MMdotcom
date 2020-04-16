@@ -1,8 +1,8 @@
-//TODO: figure out why AWS Gateway needs to be (*) and I cannot set http://localhost:3000
-
 //When deploying new lambda function for email, we must travel to this link and continue
 //https://accounts.google.com/b/0/displayunlockcaptcha
 
+//TODO: See if there is any way to load balance or limit requests
+//This applies for both Lambda (because I don't want to be DDOS'ed with emails) and S3 (because I don't want to be regular DDOS'ed and have to pay a bunch)
 var sesAccessKey = process.env.email_address;
 var sesSecretKey = process.env.secret_key;
 

@@ -1,3 +1,9 @@
+//TODO: Implement real links or figure out why anchor tags arent working
+//Home
+//Github
+//Linkedin
+//Resume
+
 import MiCoolComponent from '../../micomponent-framework/MiCoolComponent.js'
 
 class PageHeader extends MiCoolComponent {

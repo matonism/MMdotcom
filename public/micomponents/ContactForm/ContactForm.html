@@ -4,16 +4,29 @@
         
 		<div class="text-title">
 			Contact Me
-		</div>
-        <div class="form-row">
-            <custom-input class="input-box" id="name" name="name" label="Name" type="text" variant="minimal"></custom-input>
-            <custom-input class="input-box" id="email" name="email" label="Email" type="text" variant="minimal"></custom-input>
         </div>
-        <custom-input id="content" name="content" label="Requests/Questions/Compliments/Insults/etc..." type="textarea" variant="minimal"></custom-input>
-        <div class="button-container">
-            <div class="submit-button">Submit</div>
+        <div class="form-inputs">
+            <div class="form-row">
+                <custom-input class="input-box" id="name" name="name" label="Name" type="text" variant="minimal"></custom-input>
+                <custom-input class="input-box" id="email" name="email" label="Email" type="text" variant="minimal"></custom-input>
+            </div>
+            <custom-input id="content" name="content" label="Requests/Questions/Compliments/Insults/etc..." type="textarea" variant="minimal"></custom-input>
+            <div class="button-container">
+                <div class="mm-button submit-button">Submit</div>
+            </div>
         </div>
-        <div class="processing-wall hide"></div>
+
     </div>
 
+
+    <div class="form-completed hide">
+		<div class="text-title">
+			Contact Me
+        </div>
+        <div class="thank-you-text">{!message-text}</div>
+        <div class="button-container">
+            <div class="mm-button return-home-button">Return Home</div>
+        </div>
+    </div>
+    <div class="processing-wall hide"></div>
 </template>

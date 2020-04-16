@@ -15,7 +15,7 @@
     flex-direction: column;
     align-items: flex-end;
 }
-.submit-button{
+.mm-button{
 	border: 2px solid black;
 	padding: 1rem;
 	transition: padding 0.1s, margin 0.1s;
@@ -26,7 +26,7 @@
 	font-family: Montserrat;
 }
 
-.submit-button:hover{
+.mm-button:hover{
 	padding: 1.2rem;
 	margin-top: 1.4rem;
 }
@@ -51,6 +51,20 @@
 
 .toast-message{
 	font-size: 50px;
+}
+
+.thank-you-text {
+	font-size: 1.2rem;
+	line-height: 1.9rem;
+	padding: 2rem;
+	font-family: Montserrat;
+}
+
+.form-completed{
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	padding: 10rem 10rem;
 }
 
 .hide{
