@@ -56,6 +56,11 @@
 	text-decoration: none;
 }
 
+.header-icon:hover a{
+	text-decoration: underline;
+	text-decoration-color: #ffb0b0;
+}
+
 .header-icon-image{
 	height: 8rem;
 }

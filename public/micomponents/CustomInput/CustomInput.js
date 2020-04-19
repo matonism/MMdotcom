@@ -26,7 +26,7 @@ class CustomInput extends MiCoolComponent {
         var inputField = this.shadowRoot.querySelector('#input-field');
         let textarea = this.shadowRoot.querySelector('textarea');
 
-        if(this.getAttribute('error')){
+        if(this.getAttribute('error') && this.getAttribute('error') != 'false'){
             inputField.classList.add('error');
             textarea.classList.add('error');
         }else{
