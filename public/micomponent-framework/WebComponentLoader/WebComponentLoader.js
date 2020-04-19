@@ -55,7 +55,6 @@ function WebComponentLoader(component, directoryName, loadComponentsAtInit){
 
 		}else{
 			//load the template file for the first call to each given component
-			ComponentMarkupMap.prototype.resources = {};
 			ComponentMarkupMap.createResourceEntry(directoryName + '-html');
 			return fetch("/micomponents/" + directoryName + ".html").then(response => response.text()).then(text => {
 				ComponentMarkupMap.loadResource(directoryName + '-html', text);

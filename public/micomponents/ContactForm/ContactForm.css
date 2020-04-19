@@ -70,3 +70,13 @@
 .hide{
 	display: none;
 }
+
+@media only screen and (max-width: 765px){
+	.contact-form-format{
+		padding: 6rem 1rem;
+	}
+
+	.form-row{
+		flex-wrap: wrap;
+	}
+}

@@ -47,3 +47,21 @@
     justify-content: start; 
     flex-wrap: wrap;
 }
+
+.header-icon {
+	padding: 2rem;
+}
+
+.header-icon a{
+	text-decoration: none;
+}
+
+.header-icon-image{
+	height: 8rem;
+}
+
+.header-icon-text{
+	color: #ffb0b0;
+    font-family: trampoline;
+    font-size: 2rem;
+}

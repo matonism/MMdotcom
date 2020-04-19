@@ -3,7 +3,7 @@
 }
 
 .input-container {
-    padding: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
     flex-grow: 1;
 }
 
@@ -21,6 +21,7 @@
     font-size: 1.5rem;
     padding: 0.5rem;
     font-family: Montserrat;
+    word-wrap: break-word;
 }
 
 textarea {

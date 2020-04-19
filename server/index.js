@@ -23,7 +23,6 @@ app.get('/pages/*', handleRedirect);
 function handleRedirect(req, res) {
 
     //TODO: Make this legible
-    console.log(req.originalUrl);
     let requestUrl = req.originalUrl.replace('%23', '#');
     let relativeLinkSplit = requestUrl.split('#');
     var isFile = true; 

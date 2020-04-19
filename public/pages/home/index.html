@@ -2,7 +2,9 @@
 <html>
 
 <header>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
 	<script type="module" src="/micomponents/micomponents.js"></script>
+	<script src="/utilities/js/mobileDetector.js"></script>
 	<link rel="stylesheet" href="/utilities/css/mmdotcom.css">
 </header>
 
@@ -10,7 +12,7 @@
 
 	<page-header></page-header>
 
-	<parallax-frame height="50rem" background-image="/utilities/images/backgroundhighcontrast.jpg">
+	<parallax-frame height="50rem" mobile-height="30rem" background-image="/utilities/images/backgroundhighcontrast.jpg">
 		<div slot="content">
 			<div class="intro-container">
 		
@@ -37,9 +39,11 @@
 				About Me
 			</div>
 			<div class="padding-horizontal-m">
-				Welcome to my personal website where I attempt to create something useful for my career as an excuse to experiment with design 
+				Welcome to my personal website! I am a Cleveland-based web developer who is attempting to create something useful for my career as an excuse to experiment with design 
 				elements and a new web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
 				link for reference.  
+
+				
 			</div>
 			
 		</div>		
@@ -76,6 +80,9 @@
 			<skill-gauge label="REST API" level=4 color="#e2a967"></skill-gauge>
 			<skill-gauge label="Git" level=5 color="#e2a967"></skill-gauge>
 			<skill-gauge label="Android Studio" level=3 color="#e2a967"></skill-gauge>
+			<skill-gauge label="AWS Lambda" level=3 color="#e2a967"></skill-gauge>
+			<skill-gauge label="AWS S3" level=3 color="#e2a967"></skill-gauge>
+			<skill-gauge label="AWS API Gateway" level=3 color="#e2a967"></skill-gauge>
 		</div>
 
 		<div class="skill-category">
@@ -83,6 +90,7 @@
 			<skill-gauge label="Photoshop" level=4 color="#c36060"></skill-gauge>
 			<skill-gauge label="Cleveland Browns" level=5 color="#c36060"></skill-gauge>
 			<skill-gauge label="Party Planning" level=4 color="#c36060"></skill-gauge>
+			<skill-gauge label="Table Tennis" level=4 color="#c36060"></skill-gauge>
 			<skill-gauge label="Piano" level=1 color="#c36060"></skill-gauge>
 		</div>
 	</div>

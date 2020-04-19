@@ -29,6 +29,11 @@
 body {
 	margin: 0px;
 }
+.fill-content-body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
 .masthead{
 	flex-grow: 3;
 	height: 100%;
@@ -209,6 +214,7 @@ body {
 }
 
 .contact-form-container{
+	flex-grow: 2;
 	background-color: rgba(195,180,180,0.1);
 }
 
@@ -223,4 +229,29 @@ body {
 	color: white; 
 	font-family: Trampoline; 
 	padding-top: 1rem;
+}
+
+@media only screen and (max-width: 765px) {
+	
+	.padding-horizontal-m {
+		padding: 0rem 1rem;
+		text-align: center;
+	}
+
+	.skill-category{
+		width: 100%;
+	}
+
+	.name-format{    
+		font-size: 5rem;
+	}
+
+	.text-block{ 
+		font-size: 2.2rem;
+	}
+
+	.skill-section{
+		padding: 3rem 0rem;
+		width: 100%;
+	}
 }

@@ -13,11 +13,12 @@ class ContactForm extends MiCoolComponent {
         return ['message-text']
     }
 
-    form = {name: '', email: '', content: ''};
-
     connectedCallback(){
         super.connectedCallback();
-        this.setAttribute('message-text', 'Thank you for reaching out! I\'ll get back to you as soon as I can!');
+        if(!this.getAttribute('message-text')){
+            this.setAttribute('message-text', 'Thank you for reaching out! I\'ll get back to you as soon as I can!');
+        }
+        this.form = {name: '', email: '', content: ''};
     }
     renderedCallback(){
 
