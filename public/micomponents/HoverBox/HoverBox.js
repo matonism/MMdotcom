@@ -35,6 +35,7 @@ class HoverBox extends MiCoolComponent {
         }
         if(!!this.getAttribute('font-color')){
             box.style.color = this.getAttribute('font-color');
+            hoverText.style.textShadow = "0.2px 0.2px 10px gray";
         }
 
         box.addEventListener('click', (event) => {

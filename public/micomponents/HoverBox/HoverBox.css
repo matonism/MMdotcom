@@ -9,6 +9,8 @@
     color: white;
     font-family: Trampoline;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .hover-box{
@@ -25,7 +27,8 @@
     position: absolute;
     top: calc(5rem - 1.2rem);
     text-align: center;
-    width: 100%;
+    width: 90%;
+    text-shadow: 0.2px 0.2px 10px black;
 
 }
 
