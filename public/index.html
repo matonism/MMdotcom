@@ -49,7 +49,7 @@
 				About Me
 			</div>
 			<div class="padding-horizontal-m">
-				Welcome to my personal website! I am a Cleveland-based web developer with a strong background in Salesforce development and a large massive interest in Web development.  This entire site is built with a 
+				Welcome to my personal website! I am a Cleveland-based web developer with a strong background in Salesforce development and a massive interest in Web development.  This entire site is built with a 
 				web component based framework I built. <a href="https://github.com/matonism/micomponent">Github</a> 
 				link for reference.  
 
@@ -67,6 +67,7 @@
 			<skill-gauge label="HTML" level=5></skill-gauge>
 			<skill-gauge label="CSS" level=4></skill-gauge>
 			<skill-gauge label="Java" level=3></skill-gauge>
+			<skill-gauge label="Typescript" level=3></skill-gauge>
 			<skill-gauge label="C#" level=3></skill-gauge>
 			<skill-gauge label="SQL" level=3></skill-gauge>
 			<skill-gauge label="PHP" level=2></skill-gauge>
@@ -93,6 +94,7 @@
 			<skill-gauge label="AWS Lambda" level=3 color="#e2a967"></skill-gauge>
 			<skill-gauge label="AWS S3" level=3 color="#e2a967"></skill-gauge>
 			<skill-gauge label="AWS API Gateway" level=3 color="#e2a967"></skill-gauge>
+			<skill-gauge label="AWS Route 53" level=3 color="#e2a967"></skill-gauge>
 			<skill-gauge label="Android Studio" level=2 color="#e2a967"></skill-gauge>
 		</div>
 
@@ -117,6 +119,7 @@
 			<hover-box id="MiCoolComponents" label="MiCool Components" size="20rem" image="/utilities/images/MiCoolComponent.png"></hover-box>
             <hover-box id="brackset" label="Brackset" size="20rem" font-color="azure" image="/utilities/images/brackset.png"></hover-box>
             <hover-box id="boardGameLeague" label="Board Game League" size="20rem" font-color="midnightblue" image="/utilities/images/board-game-league.png"></hover-box>
+            <hover-box id="residentialResources" label="Residential Resources" size="20rem" image="/utilities/images/residentialresources.png"></hover-box>
 			<hover-box id="UltimateSummerParty" label="Ultimate Summer Party" size="20rem" image="/utilities/images/USP.png"></hover-box>
 			<hover-box id="customLookup" label="LWC custom lookup" size="20rem" font-color="midnightblue" image="/utilities/images/customLookup.png"></hover-box>
 			<hover-box id="friendSurvey" label="Friend Survey" size="20rem" font-color="midnightblue" image="/utilities/images/friend-survey.PNG"></hover-box>
@@ -160,11 +163,13 @@
 			}else if(event.detail.id === 'teamGenerator'){
 				window.open('http://team-generator.s3-website.us-east-2.amazonaws.com/', '_blank');
 			}else if(event.detail.id === 'boardGameLeague'){
-				window.open('http://board-game-league.s3-website.us-east-2.amazonaws.com/', '_blank');
+				window.open('https://bglcompanion.com/', '_blank');
 			}else if(event.detail.id === 'brackset'){
 				window.open('https://brackset.com/', '_blank');
 			}else if(event.detail.id === 'beeGame'){
 				window.open('http://bee-game-dev.s3-website.us-east-2.amazonaws.com/', '_blank');
+			}else if(event.detail.id === 'residentialResources'){
+				window.open('https://residentialresources.com/', '_blank');
 			}
 		});
 	</script>

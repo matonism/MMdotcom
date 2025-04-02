@@ -6,6 +6,7 @@
 var sesAccessKey = process.env.email_address;
 var sesSecretKey = process.env.secret_key;
 
+const validator = require('./inputValidator.js');
 exports.handler = function(event, context, callback) {
 
   	var nodemailer = require('nodemailer');
