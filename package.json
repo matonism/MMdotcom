@@ -13,7 +13,10 @@
   },
   "scripts": {
     "test": "./server/index.js",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "deploy:sync": "aws s3 sync ./public s3://michaelmatonis.com/",
+    "deploy:invalidate": "aws cloudfront create-invalidation --distribution-id E20I08WM9TFVOK --paths \"/*\"",
+    "deploy": "npm run deploy:sync && npm run deploy:invalidate"
   },
   "repository": {
     "type": "git",
