@@ -1,7 +1,106 @@
-To properly set up for nodemailer
-1. Add 2 factor authentication
-2. Generate and use new password generated here https://myaccount.google.com/apppasswords
+# MMdotcom
 
+Personal portfolio site for [Michael Matonis](https://michaelmatonis.com) — a Cleveland-based web developer with a background in Salesforce development. The site showcases skills, projects, downloadable resumes, and a contact form.
 
-###################### When site won't update in browser despite uploading a change ##################
-Need to add invalidation via Cloudfront
+## Tech Stack
+
+| Layer | Technologies |
+|-------|--------------|
+| **Frontend** | HTML, CSS, JavaScript (ES modules), native Web Components |
+| **UI framework** | [MiComponents](https://github.com/matonism/micomponent) — a custom web component framework built on shadow DOM and a dynamic component loader |
+| **Polyfills** | `@webcomponents/custom-elements`, `@webcomponents/webcomponentsjs` |
+| **Local dev server** | [Express](https://expressjs.com/) |
+| **Contact form backend** | AWS Lambda, API Gateway, [Nodemailer](https://nodemailer.com/) (Gmail SMTP) |
+| **Hosting & CDN** | AWS S3, CloudFront, Route 53 |
+
+## Project Structure
+
+```
+MMdotcom/
+├── public/                      # Static site — deployed to S3
+│   ├── index.html               # Site entry point
+│   ├── pages/                   # Routed pages (home, contact, etc.)
+│   ├── micomponents/            # Custom web components (PageHeader, ContactForm, …)
+│   ├── micomponent-framework/   # MiCoolComponent base class and WebComponentLoader
+│   └── utilities/               # Shared CSS, JS, images, and downloadable files
+├── server/                      # Express dev server
+├── lambda/                      # Contact-form email handler (AWS Lambda)
+└── package.json
+```
+
+## Local Development
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm
+
+### Setup
+
+```bash
+npm install
+```
+
+### Run
+
+```bash
+npm start
+```
+
+The Express server starts on **port 3000** (or the value of `PORT`) and serves the `public/` directory. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+The dev server also handles `/pages/*` routing so that directory-style URLs resolve to the correct HTML files.
+
+## Deployment
+
+Production hosting is on **AWS S3** fronted by **CloudFront**. Deployments require the [AWS CLI](https://aws.amazon.com/cli/) configured with credentials that can write to the S3 bucket and create CloudFront invalidations.
+
+```bash
+npm run deploy
+```
+
+This runs two steps:
+
+1. **`deploy:sync`** — syncs `./public` to `s3://michaelmatonis.com/`
+2. **`deploy:invalidate`** — creates a CloudFront cache invalidation for `/*` so changes appear immediately
+
+You can also run the steps individually:
+
+```bash
+npm run deploy:sync
+npm run deploy:invalidate
+```
+
+### Lambda (contact form)
+
+The contact form posts to an API Gateway endpoint backed by the function in `lambda/`. After deploying a new Lambda version, you may need to visit [Google's display-unlock-captcha page](https://accounts.google.com/b/0/displayunlockcaptcha) before Gmail will accept SMTP connections from the new deployment.
+
+Lambda environment variables:
+
+| Variable | Purpose |
+|----------|---------|
+| `email_address` | Gmail address used to send mail |
+| `secret_key` | Gmail app password (not your regular account password) |
+
+To install Lambda dependencies locally:
+
+```bash
+cd lambda && npm install
+```
+
+## Additional Notes
+
+### Nodemailer / Gmail setup
+
+To properly set up for nodemailer:
+
+1. Add 2 factor authentication to the Gmail account.
+2. Generate and use a new app password at [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords).
+
+### CloudFront cache invalidation
+
+If the site won't update in the browser despite uploading a change, the CloudFront cache likely needs to be invalidated. The `npm run deploy` script handles this automatically via `deploy:invalidate`. If you sync to S3 manually (without running the full deploy script), run `npm run deploy:invalidate` afterward.
+
+## License
+
+ISC
